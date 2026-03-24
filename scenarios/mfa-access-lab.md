@@ -1,50 +1,58 @@
-# Lab Plan: MFA Access and Login Behaviour
+# Lab: Multi-Factor Authentication (MFA) Enforcement
 
 ## Objective
 
-To understand how Multi-Factor Authentication (MFA) affects user login and access to Microsoft 365 services.
-
-This lab focuses on identity security and authentication flow.
+To observe how Multi-Factor Authentication (MFA) affects the user login process in Microsoft 365.
 
 ---
 
 ## Scenario
 
-User reports:
-
-"I entered my password correctly, but I cannot complete login due to MFA prompt issues."
+A user is required to complete an additional verification step during login after MFA is enabled.
 
 ---
 
-## Planned Test Steps (During Trial)
+## Test Steps
 
-1. Create a new test user account.
-2. Assign a Microsoft 365 license.
-3. Enable MFA for the user.
-4. Attempt login without completing MFA.
-5. Observe login failure.
-6. Complete MFA setup and login properly.
-7. Confirm successful access.
-
----
-
-## Expected Observations
-
-Without completing MFA:
-
-- Login will fail even with correct password.
-- User cannot access Microsoft 365 services.
-
-After completing MFA:
-
-- Login succeeds.
-- All assigned services work normally.
+- Opened Microsoft Entra ID Admin Center  
+- Navigated to Per-user MFA settings  
+- Enabled MFA for a test user (Sarah Lee)  
+- Logged in as the user to trigger MFA setup  
+- Completed MFA registration (Authenticator or phone)  
+- Logged out and signed in again to verify MFA enforcement  
 
 ---
 
-## What This Lab Demonstrates
+## What This Demonstrates
 
-- MFA role in authentication process
-- Difference between password authentication and MFA verification
-- Security layer beyond password
-- Real-world login troubleshooting scenarios
+- MFA adds a second layer of authentication  
+- Difference between "Enabled" and "Enforced" states  
+- User registration process for MFA  
+- Impact of MFA on login flow  
+
+---
+
+## Outcome
+
+After enabling MFA:
+- User was prompted to register an authentication method  
+- Login required additional verification  
+
+After completing setup:
+- MFA status changed to Enforced  
+- User was required to complete MFA at every login  
+
+---
+
+## Screenshots
+
+- MFA enabled for user  
+- MFA setup prompt during first login  
+- MFA verification completed  
+- MFA challenge during subsequent login  
+
+---
+
+## Notes
+
+This scenario demonstrates how MFA strengthens account security by requiring a second verification step beyond the password.
