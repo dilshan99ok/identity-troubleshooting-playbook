@@ -1,0 +1,89 @@
+# Group-Based Licensing and Troubleshooting Lab
+
+## Objective
+Implement group-based licensing in Microsoft 365 and troubleshoot a scenario where a user retains access unexpectedly.
+
+---
+
+## Configuration
+
+### User and Group Setup
+- Created users across departments: IT, HR, Finance, Operations
+- Created security groups:
+  - GRP-IT
+  - GRP-HR
+  - GRP-Finance
+  - GRP-Operations
+
+---
+
+### License Assignment
+- Assigned Microsoft 365 Business Premium license to groups
+- Users received licenses automatically through group membership
+
+---
+
+## Testing Scenario
+
+### Scenario — License Not Removed After Group Removal
+
+**Action:**  
+Removed user *Lucas Thomas* from GRP-Finance
+
+**Expected:**  
+License should be removed
+
+**Actual:**  
+License remained assigned
+
+---
+
+## Investigation
+
+Performed the following checks:
+
+1. User → Group memberships  
+   - No groups found
+
+2. User → License status  
+   - Initially showed “inherited through group”
+
+3. License details  
+   - Confirmed Assignment Path: Direct
+
+---
+
+## Root Cause
+
+- License was directly assigned during user creation
+- Group-based licensing was not the source of assignment
+
+---
+
+## Resolution
+
+- Removed direct license from the user
+- Re-added the user to GRP-Finance
+- License was automatically reassigned via group
+
+---
+
+## Result
+
+- Licensing is now controlled through groups only
+- No direct assignments remain
+- Environment follows best practices for scalability
+
+---
+
+## Key Learning
+
+- Always verify the source of license assignment (direct vs group)
+- Do not rely on a single interface; confirm from multiple views
+- Avoid mixing direct and group-based licensing
+
+---
+
+## Conclusion
+
+This lab demonstrates how group-based licensing improves consistency and management. It also highlights the importance of structured troubleshooting when access does not behave as expected.
